@@ -23,7 +23,8 @@ class DragAndDrop():
 
         draggableBox = driver.find_element_by_css_selector("div#draggable")
         droppableBox = driver.find_element_by_css_selector("#simpleDropContainer #droppable")
-        action.drag_and_drop(draggableBox,droppableBox).perform()
+        action.drag_and_drop(draggableBox, droppableBox).perform()
+        
 
         
 
