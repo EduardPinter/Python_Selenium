@@ -2,14 +2,25 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import pytest
 
-class DragAndDrop():
+#Fixture for Chrome
+@pytest.fixture(scope="class")
+def chrome_driver_init(request):
+    chrome_driver = webdriver.Chrome(executable_path='/home/edi/Downloads/Selenium/chromedriver')
+    request.cls.driver = chrome_driver
+    yield
+    chrome_driver.close()
+
+@pytest.mark.usefixtures("chrome_driver_init")
+class DragAndDropChrome():
+    pass
+class Test_DragAndDrop(DragAndDropChrome):
     
-    def test(self):
+    def test_dragDrop(self):
         
         baseUrl = "https://demoqa.com"
-        driver = webdriver.Chrome(executable_path='/home/edi/Downloads/Selenium/chromedriver')
-        driver.implicitly_wait(2)
+        driver = self.driver
         action = ActionChains(driver)
 
         driver.maximize_window()
@@ -26,13 +37,5 @@ class DragAndDrop():
         action.drag_and_drop(draggableBox, droppableBox).perform()
         
 
-        
-
-
-
         time.sleep(20)
 
-
-
-ff = DragAndDrop()
-ff.test()
