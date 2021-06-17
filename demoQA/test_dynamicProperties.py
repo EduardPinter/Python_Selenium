@@ -27,50 +27,12 @@ class DynamicPropertiesFirefox():
 class Test_DynamicPropertiesFirefox(DynamicPropertiesFirefox):
  
 
-
-    def test_notVisibleAfterButton(self):
-
-        try:
-
-            visibleAfter = self.driver.find_element_by_id("visibleAfter")
-
-        except NoSuchElementException:
-            pass
-       
-
-    def test_enabledBefore(self):
-
-        
-            enableButton = self.driver.find_element_by_id("enableAfter").is_enabled()
-            assert enableButton == False
-    
-    def test_enabledAfter(self):
-
-        enableButton = self.driver.find_element_by_id("enableAfter")
-        time.sleep(5)
-        assert enableButton.is_enabled() == True
-
-    def test_colorButton(self):
-
-        colorRed = "red"
-        colorChange = self.driver.find_element_by_id("colorChange")
-        color = colorChange.value_of_css_property("color")
-        assert color == colorRed
-
-    def test_isVisible(self):
-
-        visibleAfter = self.driver.find_element_by_id("visibleAfter")
-        assert visibleAfter.is_displayed() == True
-
 @pytest.mark.usefixtures("chrome_driver_init")
 class DynamicPropertiesChrome():
     pass
 class Test_DynamicPropertiesChrome(DynamicPropertiesChrome):
  
-    def test_randomIdTxt(self):
-
-        pom_DynamicProp = TestBase(self.driver)
-        pom_DynamicProp.test_Run()
+    
 
 
 

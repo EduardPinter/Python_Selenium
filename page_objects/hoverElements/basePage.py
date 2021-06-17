@@ -3,7 +3,7 @@ from selenium import webdriver
 from locators.locators import Locator
 
 
-class PageStart():
+class PageStartWidgets():
 
     findWidgetsPropCard = None
 

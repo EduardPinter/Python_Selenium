@@ -37,5 +37,4 @@ class Test_DragAndDrop(DragAndDropChrome):
         action.drag_and_drop(draggableBox, droppableBox).perform()
         
 
-        time.sleep(20)
 

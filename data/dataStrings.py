@@ -12,3 +12,8 @@ class DataStrings():
     # Hover Elements --- data
     buttonMessageHover = "You hovered over the Button"
     inputFieldMessage = "You hovered over the text field"
+
+    # Orange HRM admin test case
+
+    username = "opensourcecms"
+    password = "opensourcecms"

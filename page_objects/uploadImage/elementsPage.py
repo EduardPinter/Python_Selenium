@@ -5,7 +5,7 @@ from locators.locators import Locator
 
 
 
-class ElementsPage():
+class ElementsPageUpload():
     uploadClick = None
 
     def __init__(self, driver: webdriver):
@@ -14,13 +14,12 @@ class ElementsPage():
     
     def findAndScroll(self, driver):
 
-        self.uploadClick
         self.uploadClick.location_once_scrolled_into_view
 
         return UploadImage(self, driver)
 
     def ClickElement(self, driver):
 
-        self.dynamicPropClick.click()
+        self.uploadClick.click()
 
         return UploadImage(self, driver)

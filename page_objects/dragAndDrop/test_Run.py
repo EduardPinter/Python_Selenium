@@ -1,13 +1,12 @@
-
-from page_objects.uploadImage.uploadImage import UploadImage
-from page_objects.uploadImage.elementsPage import ElementsPageUpload
-from page_objects.uploadImage.basePage import PageStartUpload
+from page_objects.dragAndDrop.dragDrop import DroppablePage
+from page_objects.dragAndDrop.interactionsPage import InteractionsPage
+from page_objects.dragAndDrop.basePage import PageStartInteractions
 from selenium import webdriver
 import time
 from data.dataStrings import DataStrings
 from locators.locators import Locator
 
-class TestBaseUpload():
+class TestBaseHover():
     
 
     def __init__(self, driver: webdriver):
@@ -27,11 +26,7 @@ class TestBaseUpload():
 
         self.driver.get(dataStrings.baseUrl)
         time.sleep(2)
-        PageStartUpload.elementsPropCardClick()
-        ElementsPageUpload.findAndScroll()
-        ElementsPageUpload.ClickElement()
-        UploadImage.sendFilePath()
-
-        
-
-        
+        PageStartInteractions.InteractionsPropCardClick()
+        InteractionsPage.findAndScroll()
+        InteractionsPage.ClickElement()
+        DroppablePage.dragDrop()

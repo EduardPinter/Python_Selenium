@@ -6,7 +6,7 @@ from locators.locators import Locator
 from selenium import webdriver
 
 class DynamicPropPage():
-
+    driver: webdriver = None
     randomText = None
     visibleAfter = None
     enableButton = None
@@ -14,6 +14,7 @@ class DynamicPropPage():
 
     def __init__(self, driver: webdriver):
 
+        self.driver = driver
         self.randomText = driver.find_element_by_xpath(Locator.randomTextId1)
         self.visibleAfter = driver.find_element_by_id(Locator.visibleAfter)
         self.enableButton = driver.find_element_by_id(Locator.enableButton)
@@ -44,7 +45,7 @@ class DynamicPropPage():
 
     def enableButtonTrue(self, driver):
 
-        time.sleep(5)
+        
         assert self.enableButton.is_enabled() == True
 
         return TestBase(self,driver)

@@ -4,16 +4,19 @@ from locators.locators import Locator
 
 
 class PageStart():
-
+    
+    driver: webdriver = None
     findDynamicPropCard = None
 
     def __init__(self, driver: webdriver):
-        self.findDynamicPropCard = driver.find_element_by_xpath(Locator.dynamicPropCard)
+        
+        self.driver = driver
+        self.findDynamicPropCard = self.driver.find_element_by_xpath(Locator.elementsPropCard)
 
     
-    def dynamicPropCardClick(self, driver):
+    def dynamicPropCardClick(self):
         self.findDynamicPropCard.click()
 
-        return ElementsPage(self, driver)
+        return ElementsPage(self.driver)
 
 

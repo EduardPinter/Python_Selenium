@@ -3,16 +3,16 @@ from selenium import webdriver
 from locators.locators import Locator
 
 
-class PageStart():
+class PageStartUpload():
 
     findDynamicPropCard = None
 
     def __init__(self, driver: webdriver):
 
-        self.findDynamicPropCard = driver.find_element_by_xpath(Locator.dynamicPropCard)
+        self.findDynamicPropCard = driver.find_element_by_xpath(Locator.elementsPropCard)
 
     
-    def dynamicPropCardClick(self, driver):
+    def elementsPropCardClick(self, driver):
         
         self.findDynamicPropCard.click()
 
