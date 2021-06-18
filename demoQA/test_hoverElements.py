@@ -1,12 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 import time
 import pytest
 
 #Fixture for Firefox
 @pytest.fixture(scope="class")
 def driver_init(request):
-    ff_driver = webdriver.Firefox(executable_path='/home/edi/Downloads/Selenium/geckodriver')
+    ff_driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     request.cls.driver = ff_driver
     yield
     ff_driver.close()
@@ -14,7 +16,7 @@ def driver_init(request):
 #Fixture for Chrome
 @pytest.fixture(scope="class")
 def chrome_driver_init(request):
-    chrome_driver = webdriver.Chrome(executable_path='/home/edi/Downloads/Selenium/chromedriver')
+    chrome_driver = webdriver.Chrome(ChromeDriverManager().install())
     request.cls.driver = chrome_driver
     yield
     chrome_driver.close()

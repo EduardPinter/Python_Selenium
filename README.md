@@ -40,3 +40,30 @@ pip install -r requirements.txt
 
 ## Select Python Interpreter - use virtualenv Python 3.8.5 64-bit 'venv'
 
+## SeleniumBase
+
+After the installation of SeleniumBase, we need to download chromeDriver
+
+```bash
+
+sbase install chromedriver latest
+
+```
+
+Using seleniumBase to run tests
+
+```bash
+
+py.test folder/file.py --browser=nameOfTheBrowser(firefox,chrome,opera...)
+
+```
+
+In order for test running to be visible in Linux(headed and not headless - headless is default in Linux), it needs a following command
+at the end of the line
+
+```bash
+
+--headed
+
+```
+
