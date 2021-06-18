@@ -23,7 +23,7 @@ class BasePageShop():
     def hoverOverNavigLink(self, driver):
 
         self.action.move_to_element(self.hoverNavigationWomen).perform()
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located(By.XPATH, Locator.fadedShortSleeveShirt))
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located(By.XPATH, Locator.tshirtsNavSection))
 
         return
 

@@ -12,13 +12,10 @@ class ElementsPage():
 
         self.driver = driver
         self.dynamicPropClick = driver.find_element_by_xpath(Locator.dynamicPropSection)
+    
+    def navigateToDynamicPropertiesPage(self):
 
-    def findAndScroll(self, driver, webElement):
-
-        webElement.location_once_scrolled_into_view
-
-    def ClickElement(self, driver):
-
+        self.dynamicPropClick.location_once_scrolled_into_view
         self.dynamicPropClick.click()
 
-        return DynamicPropPage(self, driver)
+        return DynamicPropPage(self.driver)

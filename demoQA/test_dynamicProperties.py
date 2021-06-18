@@ -1,9 +1,9 @@
+from page_objects.dynamicProp.basePage import PageStart
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-import time
+from page_objects.dynamicProp.elementsPage import ElementsPage
+from page_objects.dynamicProp.dynamicPropertiesPage import DynamicPropPage
 import pytest
-from selenium.common.exceptions import NoSuchElementException
-from page_objects.dynamicProp.pom_dynamicProp import TestBase
+
 
 #Fixture for Firefox
 @pytest.fixture(scope="class")
@@ -32,7 +32,20 @@ class DynamicPropertiesChrome():
     pass
 class Test_DynamicPropertiesChrome(DynamicPropertiesChrome):
  
-    
+
+        dataStrings = DataStrings()
+
+        self.driver.get(dataStrings.baseUrl)
+        
+        homePage = PageStart(self.driver)
+        elementsPage = homePage.dynamicPropCardClick()
+        dynamicPropPage = elementsPage.navigateToDynamicPropertiesPage()
+        DynamicPropPage.assertRandomText()
+        DynamicPropPage.visibleAfterException()
+        DynamicPropPage.enableButtonFalse()
+        DynamicPropPage.enableButtonTrue()
+        DynamicPropPage.colorAssert()
+        DynamicPropPage.visibleAfterTrue()
 
 
 

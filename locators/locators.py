@@ -58,4 +58,8 @@ class Locator():
         colorName = "Blue"
         shirtQuantity = "quantity_wanted"
         addToCartButton = "//p[@id='add_to_cart']//span[.='Add to cart']"
+        shoppingCartTitleId = "layer_cart_product_title"
+        shopptingCartAttr = "layer_cart_product_attributes"
+        shoppingCartQuantity = "layer_cart_product_quantity"
+        shoppingCartCost = "layer_cart_product_price"
 

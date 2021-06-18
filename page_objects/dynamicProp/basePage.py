@@ -13,6 +13,14 @@ class PageStart():
         self.driver = driver
         self.findDynamicPropCard = self.driver.find_element_by_xpath(Locator.elementsPropCard)
 
+    def goToWebsite(self, driver, url):
+
+        self.driver.implicitly_wait(3)
+
+        self.driver.get(url)
+        self.driver.maximize_window()
+
+
     
     def dynamicPropCardClick(self):
         self.findDynamicPropCard.click()
