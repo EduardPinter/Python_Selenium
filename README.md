@@ -38,3 +38,5 @@ pip install -r requirements.txt
 
 ```
 
+## Select Python Interpreter - use virtualenv Python 3.8.5 64-bit 'venv'
+
